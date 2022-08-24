@@ -1,0 +1,193 @@
+@font-face {
+  font-family: UglyByte;
+  src: url(fonts/UglyByte.otf);
+}
+
+@font-face {
+  font-family: Metropolis;
+  src: url(fonts/Metropolis.ttf);
+}
+
+@font-face {
+  font-family: ShogekingOniki;
+  src: url(fonts/ShogekingOniki.otf);
+}
+
+html,
+body {
+  background-color: #282c34;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.App {
+  text-align: center;
+  font-family: UglyByte;
+}
+
+.load-font {
+  opacity: 0.0001;
+  position: fixed;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  padding: 50px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  font-size: 40px;
+  font-family: ShogekingOniki;
+}
+
+canvas {
+  margin-top: 50px;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#quotes {
+  text-align: center;
+  font-size: 14px;
+  padding: 30px 0;
+  font-family: Metropolitan;
+  /*    */
+}
+
+.fadeInOut {
+  animation: fadeInOut ease 10s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  width: 100%;
+  position: absolute;
+  background: transparent;
+}
+.nav-link {
+  text-decoration: none;
+
+  color: white;
+}
+.nav-link.active,
+.nav-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-skip-ink: all;
+}
+
+a:visited {
+  color: #fff;
+}
+
+#contactCards {
+  display: flex;
+  height: 24vh;
+  justify-content: space-evenly;
+  max-height: 150px;
+  min-height: 50px;
+  width: 100vw;
+  padding: 25px;
+  align-items: center;
+  max-width: 1000px;
+}
+
+#contactCards img {
+  vertical-align: middle;
+  height: auto;
+  max-width: 80px;
+  width: 7vw;
+  transition: transform 0.5s ease-out;
+}
+
+#contactCards a:hover img {
+  filter: drop-shadow(0px 0px 7px rgba(0 0 0 / 0.3));
+  transform: scale(1.1);
+}
+
+#contactCards a {
+  padding: 25px;
+}
+
+#contact {
+  padding-top: 100px;
+}
+
+.announce {
+  font-family: Metropolis;
+  font-size: 25px;
+  color: white;
+  padding: 10px 0;
+}
+.letters {
+  display: flex;
+  font-family: UglyByte;
+  background: linear-gradient(to top, #3384ff, #d1e2ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-size: 150px;
+  justify-content: center;
+}
+@keyframes borderBlink {
+  from,
+  to {
+    border-color: white;
+  }
+  50% {
+    border-color: transparent;
+  }
+}
+.bytes:hover {
+  border-left: 1px solid white;
+  animation: borderBlink 1s step-end infinite;
+}
+
+@media only screen and (max-width: 600px) {
+  .bytes {
+    font-size: 12vw;
+  }
+}
+
+.hidden {
+  opacity: 0.0001;
+  position: absolute;
+}
+
+.picker-dot {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+#colorPickers {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+.picker-dot {
+  margin: 20px 0;
+}
