@@ -9,12 +9,13 @@
   <style>
     body {
       margin: 0;
+      background: #f0f0f0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     nav {
       width: 100%;
-      background-color: #333;
+      background-color: #f0f0f0; /* same as body */
       padding: 15px 30px;
       position: fixed;
       top: 0;
@@ -24,49 +25,70 @@
     nav ul {
       list-style: none;
       display: flex;
-      justify-content: flex-start;
-      gap: 20px;
+      justify-content: center;
+      gap: 40px;
     }
 
     nav ul li a {
       text-decoration: none;
-      color: #f0f0f0;
+      color: blue;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 20px;
       transition: color 0.3s ease;
     }
 
     nav ul li a:hover {
-      color: #00bcd4;
+      color: black;
     }
 
     section {
-      padding-top: 80px; /* To avoid being hidden behind the fixed nav */
+      padding-top: 100px;
     }
 
+    h2.section-title {
+      text-align: center;
+      font-size: 32px;
+      color: blue;
+      margin-bottom: 20px;
+    }
+
+    /* Relax Section */
     #relax {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start; /* Left side */
       align-items: center;
       height: 100vh;
-      background: #e5f6ff;
-      text-align: center;
+      padding-left: 5%;
+      background: #f0f0f0;
       flex-direction: column;
     }
 
-    #relax h2 {
-      font-size: 36px;
-      color: #333;
+    #relax h2, #relax p {
+      text-align: left;
+      width: 100%;
     }
 
     #relax p {
       font-size: 18px;
       color: #555;
-      max-width: 600px;
+      max-width: 500px;
     }
+
+    /* Contact Section */
+    #contact .container {
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    /* Reuse existing styles from styles.css for .box, .content, .intro-text, .social-icons */
   </style>
 </head>
-<body>
+<body onload="location.href='#relax'">
 
   <!-- Navbar -->
   <nav>
@@ -76,9 +98,16 @@
     </ul>
   </nav>
 
+  <!-- Relax Section (Default) -->
+  <section id="relax">
+    <h2 class="section-title">Relax</h2>
+    <p>Take a deep breath and unwind. This is your space to relax. Add quotes, playlists, or peaceful images here later.</p>
+  </section>
+
   <!-- Contact Section -->
   <section id="contact">
     <div class="container">
+      <h2 class="section-title">Contact</h2>
       <div class="box">
         <div class="content">
           <p class="intro-text">Safiullah</p>
@@ -94,14 +123,8 @@
     </div>
   </section>
 
-  <!-- Relax Section -->
-  <section id="relax">
-    <h2>Relax</h2>
-    <p>Take a deep breath and unwind. This section is your personal space — add a playlist, quote, or anything that helps you relax.</p>
-  </section>
-
   <script>
-    // Show content after the box animation ends
+    // Show content after box animation ends
     document.querySelector('.box').addEventListener('animationend', () => {
       const content = document.querySelector('.content');
       content.style.display = 'flex';
